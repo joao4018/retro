@@ -20,6 +20,6 @@ ARG JAVAJAR=/workspace/app/target
 COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
-COPY --from=build ${JAVAJAR}/retro-0.0.1-SNAPSHOT /app/retro.jar
+COPY --from=build ${JAVAJAR}/retro-0.0.1-SNAPSHOT.jar /app/retro.jar
 CMD ["java", "-jar", "retro.jar"]
 ENTRYPOINT ["java", "-jar", "retro.jar"]
