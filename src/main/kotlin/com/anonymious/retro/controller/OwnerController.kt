@@ -1,5 +1,6 @@
 package com.anonymious.retro.controller
 
+import com.anonymious.retro.entity.OwnerEntity
 import com.anonymious.retro.service.OwnerService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
@@ -18,7 +19,7 @@ class OwnerController (
     }
     @GetMapping("/get-owner")
     fun getOwner(@RequestParam id: Long
-    ) {
-        ownerService.getOwner(id)
+    ): OwnerEntity {
+        return ownerService.getOwner(id)
     }
 }
