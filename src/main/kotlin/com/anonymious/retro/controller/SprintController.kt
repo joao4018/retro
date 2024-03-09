@@ -1,5 +1,6 @@
 package com.anonymious.retro.controller
 
+import com.anonymious.retro.entity.SprintEntity
 import com.anonymious.retro.service.SprintService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
@@ -17,5 +18,11 @@ class SprintController (
         @RequestParam(value = "id_owner") idOwner: Long,
         ) {
         sprintService.createSprint(idAccess, idOwner)
+    }
+    @GetMapping("/get-sprint")
+    fun getSprint(
+        @RequestParam(value = "id_access") idAccess: String,
+        ): SprintEntity {
+        return sprintService.getSprint(idAccess)
     }
 }

@@ -13,4 +13,7 @@ class SprintService(
     fun createSprint(idAccess: String, idOwner: Long) {
         sprintRepository.save(SprintEntity(idAccess, OwnerEntity(idOwner)))
     }
+    fun getSprint(idAccess: String): SprintEntity {
+        return sprintRepository.findSprintEntityByIdAccess(idAccess).orElseThrow()
+    }
 }
