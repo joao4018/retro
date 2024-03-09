@@ -1,7 +1,7 @@
 package com.anonymious.retro.entity
 
-import jakarta.persistence.*
 import lombok.*
+import javax.persistence.*
 
 
 @Entity
