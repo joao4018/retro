@@ -18,4 +18,8 @@ class CommentService(
         val sprintEntity: SprintEntity = sprintRepository.findSprintEntityByIdAccess(idAccess).orElseThrow()
         commentRepository.save(CommentEntity(type, comment, sprintEntity))
     }
+    fun getCommentsBySprint(idAccess: String): List<CommentEntity> {
+        val sprintEntity: SprintEntity = sprintRepository.findSprintEntityByIdAccess(idAccess).orElseThrow()
+        return commentRepository.findAllByIdSprint(sprintEntity).orElseThrow()
+    }
 }

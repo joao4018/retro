@@ -1,5 +1,6 @@
 package com.anonymious.retro.controller
 
+import com.anonymious.retro.entity.CommentEntity
 import com.anonymious.retro.service.CommentService
 import com.anonymious.retro.service.SprintService
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,5 +20,12 @@ class CommentController (
         @RequestParam(value = "comment") comment: String,
         ) {
         commentService.createComment(idAccess, type, comment)
+    }
+    @GetMapping("/get-comments-sprint")
+    fun getCommentsBySprint(
+        @RequestParam(value = "id_access") idAccess: String,
+
+        ): List<CommentEntity> {
+        return commentService.getCommentsBySprint(idAccess)
     }
 }
