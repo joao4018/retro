@@ -13,7 +13,7 @@ class SprintController (
 ) {
     @PostMapping("/create-sprint")
     fun createSprint(
-        @RequestParam(value = "id_access") idAccess: Long,
+        @RequestParam(value = "id_access") idAccess: String,
         @RequestParam(value = "id_owner") idOwner: Long,
         ) {
         sprintService.createSprint(idAccess, idOwner)

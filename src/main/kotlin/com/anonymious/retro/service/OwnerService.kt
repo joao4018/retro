@@ -12,4 +12,7 @@ class OwnerService(
     fun createOwner() {
         ownerRepository.save(OwnerEntity())
     }
+    fun getOwner(id: Long) {
+        ownerRepository.findById(id)
+    }
 }

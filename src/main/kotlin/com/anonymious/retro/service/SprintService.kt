@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service
 class SprintService(
     @Autowired private val sprintRepository: SprintRepository,
 ){
-    fun createSprint(idAccess: Long, idOwner: Long) {
+    fun createSprint(idAccess: String, idOwner: Long) {
         sprintRepository.save(SprintEntity(idAccess, OwnerEntity(idOwner)))
     }
 }

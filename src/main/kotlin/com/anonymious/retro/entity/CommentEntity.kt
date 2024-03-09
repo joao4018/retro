@@ -16,7 +16,7 @@ data class CommentEntity(
     val type: Long? = null,
     val comment: String? = null,
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_owner")
+    @JoinColumn(name = "id_sprint")
     val idSprint: SprintEntity? = null,
 )
 {

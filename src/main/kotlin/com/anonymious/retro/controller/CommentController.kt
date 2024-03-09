@@ -14,10 +14,10 @@ class CommentController (
 ) {
     @PostMapping("/create-comment")
     fun createSprint(
-        @RequestParam(value = "id_sprint") idSprint: Long,
+        @RequestParam(value = "id_access") idAccess: String,
         @RequestParam(value = "type") type: Long,
         @RequestParam(value = "comment") comment: String,
         ) {
-        commentService.createComment(idSprint, type, comment)
+        commentService.createComment(idAccess, type, comment)
     }
 }

@@ -14,8 +14,8 @@ class CommentService(
     @Autowired private val commentRepository: CommentRepository,
     @Autowired private val sprintRepository: SprintRepository,
 ){
-    fun createComment(idSprint: Long, type: Long, comment: String) {
-        val sprintEntity: SprintEntity = sprintRepository.findById(idSprint).orElseThrow()
+    fun createComment(idAccess: String, type: Long, comment: String) {
+        val sprintEntity: SprintEntity = sprintRepository.findSprintEntityByIdAccess(idAccess).orElseThrow()
         commentRepository.save(CommentEntity(type, comment, sprintEntity))
     }
 }
